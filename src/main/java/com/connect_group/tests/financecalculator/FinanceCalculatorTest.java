@@ -48,14 +48,12 @@ class FinanceCalculatorTest extends BaseTest {
 
 
     //}
-    @Test
-    void changeEngineDropDown() {
-        driver.findElement(By.xpath("//div[@role='main']//div[3]//div[1]//div[1]//a[1]//span[1]//div[1]")).click();
-//  Select engineDropDown =new Select(driver.findElement(By.xpath("//button[@id='dropdown__button-engines']")));
-//    engineDropDown.selectByVisibleText("");
+//
 
-        driver.findElement(By.xpath("//button[@id='dropdown__button-engines']")).click();
-        driver.findElement(By.xpath("//a[normalize-space()='P250 Petrol']")).click();
-        driver.findElement(By.xpath("//span[@class='fc-cta__cta--size-primary']")).click();
+    @Test
+    void verifyModalPresent() {
+        driver.findElement(By.xpath("//div[@role='main']//div[3]//div[1]//div[1]//a[1]//span[1]//div[1]")).click();
+        driver.findElement(By.xpath("//button[@id='product']//*[name()='svg']")).click();
+        driver.findElement(By.xpath("//button[@id='product']//*[name()='svg']")).isEnabled();
     }
 }
