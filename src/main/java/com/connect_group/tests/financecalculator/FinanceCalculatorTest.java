@@ -51,9 +51,17 @@ class FinanceCalculatorTest extends BaseTest {
 //
 
     @Test
-    void verifyModalPresent() {
+    void verifyModalPresent() throws InterruptedException {
         driver.findElement(By.xpath("//div[@role='main']//div[3]//div[1]//div[1]//a[1]//span[1]//div[1]")).click();
-        driver.findElement(By.xpath("//button[@id='product']//*[name()='svg']")).click();
-        driver.findElement(By.xpath("//button[@id='product']//*[name()='svg']")).isEnabled();
+        driver.findElement(By.xpath("//button[@id='product']//*[name()='svg']"));
+        assertTrue(driver.getCurrentUrl().equals("https://www.landrover.co.uk/offers-and-finance/finance-calculator.html#/models"));
+
     }
+    @Test
+    void changeFinanceQuote(){
+        driver.findElement(By.xpath("//div[@class='QuickQuote']//div[2]//div[1]//div[1]//a[1]//span[1]//div[1]")).click();
+driver.findElement(By.xpath(""));
+    }
+
+
 }
